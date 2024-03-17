@@ -1,0 +1,145 @@
+.features-info{
+  margin: 5rem 20px;
+}
+
+.features-info .content-infos{
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.features-info .content-infos .block{
+  display: flex;
+  align-items: center;
+}
+
+.features-info .content-infos .block .icon{
+  padding: 10px;
+  background: black;
+  color: white;
+  font-size: 3.5rem;
+  border-radius: 50%;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.features-info .content-infos .block .icon:hover{
+  background: #ffcaf2;
+  color: black;
+  transition: 0.3s;
+}
+
+.features-info .content-infos .block span{
+  color: rgb(54, 54, 54);
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 600px){
+  .features-info .content-infos{
+    flex-direction: column;
+    text-align: center;
+  }
+  .features-info .content-infos .block{
+    margin-bottom: 20px;
+  }
+}
+
+/* products featured */
+
+.features-product{
+  margin: 2rem 20px;
+}
+
+.features-product h2{
+  text-align: center;
+  letter-spacing: 1.7px;
+  color: #333;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.features-product .product-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1800px;
+  margin: 0 auto;
+  margin-top: 4rem;
+  gap: 20px;
+}
+
+.features-product .product-list .product-card{
+  width: 400px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  text-align: center;
+  overflow: hidden;
+}
+
+.features-product .product-list .content-product{
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.features-product .product-list .product-card:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.features-product .product-list .product-card img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.features-product .product-list .product-card:hover img{
+  transform: scale(1.1);
+}
+
+.features-product .product-list .content-product h3{
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.features-product .product-list .content-product p{
+  color: #333;
+  font-size: 1.1rem;
+  margin: 20px 0;
+}
+
+.features-product .product-list .content-product span{
+  color: #ff0000;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.features-product .product-list .content-product button{
+  padding: 10px 20px;
+  background: #0a0a0a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 100%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid transparent;
+}
+
+.features-product .product-list .content-product button:hover{
+  background: #fefefe;
+  border: 1px solid rgb(28, 28, 28);
+  color: black;
+  transition: 0.3s;
+}
