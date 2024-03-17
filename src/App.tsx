@@ -1,22 +1,19 @@
 import './App.css'
-import { Blog } from './components/Home/Blog/Blog'
-import { Features } from './components/Home/Featured/Features'
-import { Footer } from './components/Home/Footer/Footer'
-import { Hero } from './components/Home/Hero/Hero'
-import { Infos } from './components/Home/Informations/Infos'
 import { Navbar } from './components/Home/Navbar/Navbar'
-import { Parallax } from './components/Home/Parallax/Parallax'
+import { Home } from './pages/HomePage'
+import {Routes, Route} from 'react-router-dom'
+import { AboutPage } from './pages/AboutPage'
+import { Footer } from './components/Home/Footer/Footer'
 
 function App() {  
 
   return (
     <>
       <Navbar />
-      <Hero />
-      <Features />
-      <Parallax />
-      <Blog />
-      <Infos />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
       <Footer />
     </>
   )

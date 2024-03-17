@@ -1,0 +1,43 @@
+.about{
+  margin: 3rem 20px 5rem 20px;
+}
+
+.about h2{
+  text-align: center;
+  font-size: 40px;
+}
+
+.about .container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1700px;
+  gap: 100px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  height: 100%;
+  margin-top: 50px;
+}
+
+.about .container .left{
+  width: 700px;
+  height: 400px;
+}
+
+.about .container .left img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about .container .right{
+  width: 900px;
+}
+
+.about .container .right span{
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 300;
+  margin-top: 20px;
+  display: block;
+}
