@@ -40,7 +40,7 @@ export const Features = () => {
             <h3>{product.name}</h3>
             <p>{product.description.split('').splice(0, 60).join('')}</p>
             <span>€{product.price.toFixed(2)}</span>
-            <button><FaCartArrowDown /></button>
+            <button><FaCartArrowDown className="add"/></button>
           </div>
         </div>
       })}
