@@ -53,3 +53,9 @@
   font-size: 18px;
   color: rgb(189, 189, 189);
 }
+
+@media screen and (max-width: 1130px){
+  .infos .container{
+    justify-content: center;
+  }
+}

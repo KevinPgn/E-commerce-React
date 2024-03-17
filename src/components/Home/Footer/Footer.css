@@ -1,0 +1,86 @@
+footer{
+  background: radial-gradient(circle, rgba(0,0,0,1) 26%, rgba(5,14,50,1) 100%);
+  color: white;
+  padding: 3rem 50px 0.5rem 50px;
+}
+
+footer .container{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  gap: 100px;
+  border-bottom: 1px solid rgb(149, 149, 149);
+}
+
+footer .container .block{
+  width: 350px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+footer .container .block h3{
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+footer .container .block a{
+  color: rgb(149, 149, 149);
+  text-decoration: none;
+  margin-bottom: 0.7rem;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+footer .container .block a:hover{
+  transform: translatex(10px);
+  color: white;
+}
+
+footer .container .block .social{
+  margin-top: 50px;
+}
+
+footer .container .block .social .icon{
+  cursor: pointer;
+  margin: 0 10px;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 40px;
+  transition: 0.2s;
+}
+
+footer .container .block .social .facebook:hover{
+  background: #3b5998;
+}
+
+footer .container .block .social .twitter:hover{
+  background: #00acee;
+}
+
+footer .container .block .social .instagram:hover{
+  background: #e4405f;
+}
+
+
+@media screen and (max-width: 950px){
+  footer .container{
+    gap: 50px;
+  }
+
+  footer .container .block{
+    width: 300px;
+  }
+}
+
+
+.madeby{
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 15px;
+  color: rgb(174, 174, 174);
+}
