@@ -1,4 +1,5 @@
 import "./About.css"
+import imgAbout from "../../assets/imgAbout.jpg"
 
 export const About = () => {
   return <>
@@ -7,7 +8,7 @@ export const About = () => {
 
       <div className="container">
         <div className="left">
-          <img src="./public/imgAbout.jpg" alt="imgAbout" />
+          <img src={imgAbout} alt="imgAbout" />
         </div>
         <div className="right">
           <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat a esse culpa necessitatibus 

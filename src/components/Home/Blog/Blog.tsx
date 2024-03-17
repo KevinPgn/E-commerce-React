@@ -1,4 +1,5 @@
 import "./Blog.css"
+import Chair from "../../../assets/chair.png"
 
 export const Blog = () => {
   return <>
@@ -13,7 +14,7 @@ export const Blog = () => {
           <button>Discover More</button>
         </div>
         <div className="right">
-          <img src="./public/chair.png" alt="" />
+          <img src={Chair} alt="" />
         </div>
       </div>
     </section>
