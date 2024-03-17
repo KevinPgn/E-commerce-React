@@ -1,0 +1,55 @@
+.infos{
+  margin: 5rem 20px;
+}
+
+.infos .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.infos .container .block{
+  width: 350px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background: rgb(0, 0, 0);
+  color: white;
+  padding: 40px 30px;
+  transition: 0.3s;
+}
+
+.infos .container .block:hover{
+  background: rgb(16, 6, 73)
+}
+
+
+.infos .container .block .icon{
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s;
+}
+
+.infos .container .block:hover .icon{
+  transform: rotate(20deg);
+}
+
+.infos .container .block h3{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.infos .container .block p{
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+  font-size: 18px;
+  color: rgb(189, 189, 189);
+}

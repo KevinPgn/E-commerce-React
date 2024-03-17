@@ -1,0 +1,74 @@
+.blog{
+  margin-bottom: 5rem;
+  background-color: #070707;
+  padding: 4rem 30px;
+}
+
+.blog .container{
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.blog .container .left{
+  width: 700px;
+}
+
+.blog .container .left h2{
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.blog .container .left p{
+  font-size: 1.2rem;
+  color: rgb(189, 189, 189);
+  line-height: 1.5;
+  font-weight: 300;
+  margin: 2rem 0;
+}
+
+.blog .container .left button{
+  background: rgb(8, 8, 8);
+  border: 1px solid white;
+  width: 150px;
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  font-family: sans-serif;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.blog .container .left button:hover{
+  background: white;
+  color: black;
+}
+
+.blog .container .right img{
+  width: 300px;
+}
+
+@media screen and (max-width: 700px){
+  .blog .container{
+    flex-direction: column;
+  }
+
+  .blog .container .left{
+    width: 100%;
+  }
+
+  .blog .container .right{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .blog .container .right img{
+    width: 80%;
+  }
+}

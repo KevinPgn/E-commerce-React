@@ -1,7 +1,11 @@
 import './App.css'
-import { Features } from './components/Featured/Features'
-import { Hero } from './components/Hero/Hero'
-import { Navbar } from './components/Navbar/Navbar'
+import { Blog } from './components/Home/Blog/Blog'
+import { Features } from './components/Home/Featured/Features'
+import { Footer } from './components/Home/Footer/Footer'
+import { Hero } from './components/Home/Hero/Hero'
+import { Infos } from './components/Home/Informations/Infos'
+import { Navbar } from './components/Home/Navbar/Navbar'
+import { Parallax } from './components/Home/Parallax/Parallax'
 
 function App() {  
 
@@ -10,6 +14,10 @@ function App() {
       <Navbar />
       <Hero />
       <Features />
+      <Parallax />
+      <Blog />
+      <Infos />
+      <Footer />
     </>
   )
 }

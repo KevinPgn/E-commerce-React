@@ -1,9 +1,6 @@
-import "./Features.css"
-import { FaShippingFast } from "react-icons/fa";
-import { FaMedal } from "react-icons/fa";
-import { FaTrophy } from "react-icons/fa";
-import { useShop } from "../../store/Shop";
-import { FaCartArrowDown } from "react-icons/fa";
+import { FaCartArrowDown, FaMedal, FaShippingFast, FaTrophy } from "react-icons/fa";
+import { useShop } from "../../../store/Shop";
+import "./Features.css";
 
 export const Features = () => {
   const shopping = useShop(state => state.shopping.splice(0, 4));
