@@ -1,0 +1,125 @@
+.cartContainer{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 600px;
+  height: 100vh;
+  background: rgb(2, 2, 2);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 11111;
+}
+
+.cartContainer.active{
+  transform: translateX(0);
+}
+
+.cartContainer .close{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 1.7rem;
+  cursor: pointer;
+  color: white;
+}
+
+.cartContainer .cart{
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.cartContainer h1{
+  font-size: 2.5rem;
+  margin-top: 100px;
+  color: white;
+  text-align: center;
+}
+
+.cartContainer .cart .cartProduct{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  margin-top: 80px;
+}
+
+.cartContainer .cart .cartProduct:last-child{
+  border-bottom: none;
+}
+
+.cartContainer .cart .cartProduct .info{
+  width: 250px;
+  margin-left: 50px;
+}
+
+.cartContainer .cart .cartProduct img{
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.cartContainer .cart .cartProduct h3{
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.cartContainer .cart .cartProduct .price{
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #d9d9d9;
+}
+
+.cartContainer .cart .cartProduct .quantity{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cartContainer .cart .cartProduct .quantity button{
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.cartContainer .cart .cartProduct .quantity button:hover{
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.cartContainer .cart .cartProduct .quantity p{
+  margin: 0 10px;
+  font-size: 1.2rem;
+}
+
+.cartContainer .cart::-webkit-scrollbar {
+  width: 10px;
+}
+
+.cartContainer .cart::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.cartContainer .cart::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.cartContainer .total{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 20px;
+  color: white;
+}

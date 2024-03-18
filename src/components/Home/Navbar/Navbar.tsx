@@ -4,10 +4,13 @@ import { CiShoppingCart } from "react-icons/ci";
 import { IoPersonOutline } from "react-icons/io5";
 import {Link} from 'react-router-dom'
 import { useInventaire } from "../../../store/Inventaire";
+import { useShop } from "../../../store/Shop";
 
 export const Navbar = () => {
   const inventaire = useInventaire(state => state.inventaire)
-  
+  const toggleCart = useShop(state => state.toggleCart)
+
+
   return <>
     <header>
       <nav>
@@ -25,7 +28,7 @@ export const Navbar = () => {
           </div>
           <div className="cart">
             <span>{inventaire.length}</span>
-            <CiShoppingCart className="icon"/>
+            <CiShoppingCart className="icon" onClick={() => toggleCart()}/>
           </div>
           <div className="profile">
             <IoPersonOutline className="icon"/>

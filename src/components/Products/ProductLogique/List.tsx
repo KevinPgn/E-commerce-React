@@ -11,10 +11,8 @@ export const List = () => {
   const categoryFilter = useShop(state => state.categoryFilter)
   const setShopLength = useShop(state => state.setShopLength)
 
-  const inventaire = useInventaire(state => state.inventaire)
   const addToInventaire = useInventaire(state => state.addToInventaire)
   
-  console.log(inventaire);
   
   const filtered = () => {
     let filteredShopping = shopping
