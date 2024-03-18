@@ -2,7 +2,6 @@ import { useShop } from "../../../store/Shop"
 import "../Products.css"
 
 export const Filter2 = () => {
-  const shopping = useShop(state => state.shopping)
   const priceFiler = useShop(state => state.priceFilter)
   const setPriceFilter = useShop(state => state.setPriceFilter)
   const shopLength = useShop(state => state.shopLength)
