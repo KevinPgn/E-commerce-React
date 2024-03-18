@@ -18,7 +18,7 @@ export const Filter = () => {
         <div className="select-category">
           <span className="title-category">Select a Category :</span>
           <div>
-            <input type="radio" name="category"  onChange={() => setCategoryFilter("All")}/>
+            <input type="radio" name="category" checked={categoryFilter === "All"}  onChange={() => setCategoryFilter("All")}/>
             <span>All</span>
           </div>
           <div>

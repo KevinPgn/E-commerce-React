@@ -8,34 +8,45 @@ export const List = () => {
   const shopping = useShop(state => state.shopping)
   const priceFilter = useShop(state => state.priceFilter)
   const categoryFilter = useShop(state => state.categoryFilter)
-
-  console.log(shopping)
+  const setShopLength = useShop(state => state.setShopLength)
   
+
+
   const filtered = () => {
-    if(categoryFilter !== "All") {
-      return shopping.filter(product => product.category === categoryFilter)
-    } else {
-      return shopping
+    let filteredShopping = shopping
+
+    if (categoryFilter !== "All") {
+      filteredShopping = shopping.filter(product => product.category === categoryFilter)
     }
+
+    if (priceFilter === "Lowest") {
+      filteredShopping = filteredShopping.sort((a, b) => a.price - b.price)
+    } else if (priceFilter === "Highest") {
+      filteredShopping = filteredShopping.sort((a, b) => b.price - a.price)
+    }
+
+    setShopLength(filteredShopping.length)
+
+    return filteredShopping
   }
 
   return <>
-  <div className="list-container">
-    {
-      filtered().map((product, index) => {
-        return <article key={index} className='card'>
-          <div className="category">{product.category}</div>
-          <img src={product.image} alt={product.name} />
-          <FaHeart className='heart' />
-          <div className="content">
-            <h3>{product.name}</h3>
-            <p>{product.description.slice(0, 70)}</p>
-            <p className='price'>${product.price}</p>
-            <button className='btn'>Add To Cart</button>
-          </div>
-        </article>
-      })
-    }
-  </div>
+    <div className="list-container">
+      {
+        filtered().map((product, index) => {
+          return <article key={index} className='card'>
+            <div className="category">{product.category}</div>
+            <img src={product.image} alt={product.name} />
+            <FaHeart className='heart' />
+            <div className="content">
+              <h3>{product.name}</h3>
+              <p>{product.description.slice(0, 70)}</p>
+              <p className='price'>${product.price}</p>
+              <button className='btn'>Add To Cart</button>
+            </div>
+          </article>
+        })
+      }
+    </div>
   </>
 }

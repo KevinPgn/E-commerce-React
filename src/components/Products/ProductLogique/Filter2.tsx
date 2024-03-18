@@ -5,6 +5,7 @@ export const Filter2 = () => {
   const shopping = useShop(state => state.shopping)
   const priceFiler = useShop(state => state.priceFilter)
   const setPriceFilter = useShop(state => state.setPriceFilter)
+  const shopLength = useShop(state => state.shopLength)
 
   console.log(priceFiler)
 
@@ -14,14 +15,14 @@ export const Filter2 = () => {
 
   return <>
     <div className="found">
-      <span className="length">{shopping.length} products found!</span>
+      <span className="length">{shopLength} products found!</span>
       <div className="line"></div>
 
       <div className="sorts">
         <span>Sort by :</span>
         <select onChange={handleSortChange}>
-          <option value="lowers">Lowers price</option>
-          <option value="higher">Higher price</option>
+          <option value="Lowest">Lowest price</option>
+          <option value="Highest">Highest price</option>
         </select>
       </div>
     </div>
