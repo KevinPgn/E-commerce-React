@@ -1,0 +1,228 @@
+.products{
+  margin: 3rem 20px;
+}
+
+.products .search{
+  display: flex;
+  justify-content: center;
+  width: 700px;
+  margin: 0 auto;  
+  padding: 15px 20px;
+  font-size: 18px;
+  background: transparent;
+  border: 1px solid rgb(15, 15, 15);
+  outline: none;
+  color: black;
+}
+
+/* main content */
+
+main{
+  display: flex;
+  margin: 5rem auto 5rem auto;
+  gap: 30px;
+}
+
+/* filter section */
+
+.filter-container{
+  width: 400px;
+  height: 410px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter-container .title{
+  background: #060d2c;
+  color: white;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px; 
+}
+
+.filter-container .clear{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid rgb(28, 28, 28);
+}
+
+.filter-container .clear span{
+  font-size: 18px;
+  color: #000000;
+}
+
+.filter-container .clear button{
+  background: transparent;
+  border: none;
+  color: #ca063a;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.filter-container .select-category{
+  padding: 20px;
+}
+
+.filter-container .select-category .title-category{
+  font-size: 19px;
+}
+
+.filter-container .select-category div{
+  margin: 10px 0;
+}
+
+.filter-container .select-category div span{
+  font-size: 18px;
+  color: #000000;
+  margin-left: 20px;
+}
+
+/* list container */
+
+.list-container{
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+}
+
+.list-container .card{
+  width: 400px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.list-container .card img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.list-container .card:hover img{
+  transform: scale(1.1);
+}
+
+.list-container .card .content{
+  padding: 20px;
+  text-align: center;
+}
+
+.list-container .card .content h3{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.list-container .card .content p{
+  font-size: 18px;
+  color: #000000;
+}
+
+.list-container .card .content .price{
+  color: rgb(255, 41, 41);
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+.list-container .card .content .btn{
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 20px;
+  background: #060d2c;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.list-container .card .content .btn:hover{
+  background: #ca063a;
+}
+
+.list-container .card .category{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #1303a8;
+  font-size: 18px;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 11;
+}
+
+.list-container .card .heart{
+  color: white;
+  background: red;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 11;
+  font-size: 30px;
+}
+
+/* filter2 */
+
+.found{
+  display: flex;
+  align-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 50px;
+  justify-content: center;
+}
+
+.found .length{
+  font-size: 18px;
+  color: #000000;
+  margin-right: 20px;
+}
+
+.found .line{
+  width: 250px;
+  height: 1px;
+  background: #cccccc;
+  margin-right: 20px;
+}
+
+.found .sorts{
+  display: flex;
+  align-items: center;
+}
+
+.found .sorts span{
+  font-size: 18px;
+  color: #000000;
+  margin-right: 10px;
+}
+
+.found .sorts select{
+  padding: 10px 15px;
+  font-size: 18px;
+  background: #060d2c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}

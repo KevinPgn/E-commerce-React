@@ -3,7 +3,8 @@ import { useShop } from "../../../store/Shop";
 import "./Features.css";
 
 export const Features = () => {
-  const shopping = useShop(state => state.shopping.splice(0, 4));
+  const shopping = useShop(state => state.shopping);
+  const shoppingSplice = shopping.slice(0, 4);
 
   console.log(shopping);
   
@@ -30,7 +31,7 @@ export const Features = () => {
     <h2>Featured Products</h2>
 
     <div className="product-list">
-      {shopping?.map((product, index) => {
+      {shoppingSplice?.map((product, index) => {
         return <div key={index} className="product-card">
           <img src={product.image} alt={product.name} />
           <div className="content-product">
