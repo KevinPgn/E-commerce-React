@@ -3,8 +3,11 @@ import { CiHeart } from "react-icons/ci";
 import { CiShoppingCart } from "react-icons/ci";
 import { IoPersonOutline } from "react-icons/io5";
 import {Link} from 'react-router-dom'
+import { useInventaire } from "../../../store/Inventaire";
 
 export const Navbar = () => {
+  const inventaire = useInventaire(state => state.inventaire)
+  
   return <>
     <header>
       <nav>
@@ -21,6 +24,7 @@ export const Navbar = () => {
             <CiHeart className="icon"/>
           </div>
           <div className="cart">
+            <span>{inventaire.length}</span>
             <CiShoppingCart className="icon"/>
           </div>
           <div className="profile">

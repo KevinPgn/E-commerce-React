@@ -1,3 +1,4 @@
+import { useInventaire } from '../../../store/Inventaire'
 import { useShop } from '../../../store/Shop'
 import '../Products.css'
 import { FaHeart } from 'react-icons/fa'
@@ -9,9 +10,12 @@ export const List = () => {
   const priceFilter = useShop(state => state.priceFilter)
   const categoryFilter = useShop(state => state.categoryFilter)
   const setShopLength = useShop(state => state.setShopLength)
+
+  const inventaire = useInventaire(state => state.inventaire)
+  const addToInventaire = useInventaire(state => state.addToInventaire)
   
-
-
+  console.log(inventaire);
+  
   const filtered = () => {
     let filteredShopping = shopping
 
@@ -30,6 +34,10 @@ export const List = () => {
     return filteredShopping
   }
 
+  const handleClicked = (id: number, image: string, name: string, price: number) => {
+    addToInventaire(id, image, name, price)
+  }
+
   return <>
     <div className="list-container">
       {
@@ -42,7 +50,9 @@ export const List = () => {
               <h3>{product.name}</h3>
               <p>{product.description.slice(0, 70)}</p>
               <p className='price'>${product.price}</p>
-              <button className='btn'>Add To Cart</button>
+              <button 
+              onClick={() => handleClicked(product.id, product.image, product.name, product.price)}
+              className='btn'>Add To Cart</button>
             </div>
           </article>
         })
