@@ -10,6 +10,7 @@ export const List = () => {
   const priceFilter = useShop(state => state.priceFilter)
   const categoryFilter = useShop(state => state.categoryFilter)
   const setShopLength = useShop(state => state.setShopLength)
+  const searchValue = useShop(state => state.searchValue)
 
   const addToInventaire = useInventaire(state => state.addToInventaire)
   
@@ -25,6 +26,10 @@ export const List = () => {
       filteredShopping = filteredShopping.sort((a, b) => a.price - b.price)
     } else if (priceFilter === "Highest") {
       filteredShopping = filteredShopping.sort((a, b) => b.price - a.price)
+    }
+
+    if(searchValue !== '') {
+      filteredShopping = filteredShopping.filter(product => product.name.toLowerCase().includes(searchValue.toLowerCase()))
     }
 
     setShopLength(filteredShopping.length)
