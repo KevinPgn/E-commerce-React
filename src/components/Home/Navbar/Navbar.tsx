@@ -5,9 +5,11 @@ import { IoPersonOutline } from "react-icons/io5";
 import {Link} from 'react-router-dom'
 import { useInventaire } from "../../../store/Inventaire";
 import { useShop } from "../../../store/Shop";
+import { useFavories } from "../../../store/Favories";
 
 export const Navbar = () => {
   const inventaire = useInventaire(state => state.inventaire)
+  const favories = useFavories(state => state.favories)
   const toggleCart = useShop(state => state.toggleCart)
 
 
@@ -24,6 +26,7 @@ export const Navbar = () => {
         </div>
         <div className="right">
           <Link to='/favories' className="heart">
+            <span>{favories.length}</span>
             <CiHeart className="icon"/>
           </Link>
           <div className="cart">

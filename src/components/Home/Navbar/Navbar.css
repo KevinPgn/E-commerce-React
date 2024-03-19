@@ -30,7 +30,12 @@ header nav .right .cart{
   position: relative;
 }
 
-header nav .right .cart span{
+header nav .right .heart{
+  position: relative;
+
+}
+
+header nav .right span{
   position: absolute;
   display: flex;
   align-items: center;
