@@ -2,6 +2,8 @@ import { FaHeartBroken } from "react-icons/fa"
 import { useFavories } from "../../store/Favories"
 import "./Favories.css"
 import { useInventaire } from "../../store/Inventaire"
+import { FaCartArrowDown } from "react-icons/fa";
+
 
 export const Favories = () => {
   const favories = useFavories(state => state.favories)
@@ -28,7 +30,7 @@ export const Favories = () => {
               <p className='price'>${product.price}</p>
               <button 
               onClick={() => handleClicked(product.id, product.image, product.name, product.price)}
-              className='btn'>Add To Cart</button>
+              className='btn'><FaCartArrowDown /></button>
             </div>
           </article>
         })

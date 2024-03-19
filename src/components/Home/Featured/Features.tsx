@@ -1,13 +1,13 @@
 import { FaCartArrowDown, FaMedal, FaShippingFast, FaTrophy } from "react-icons/fa";
 import { useShop } from "../../../store/Shop";
 import "./Features.css";
+import { useInventaire } from "../../../store/Inventaire";
 
 export const Features = () => {
   const shopping = useShop(state => state.shopping);
+  const addToInventaire = useInventaire(state => state.addToInventaire);
+  const inventaire = useInventaire(state => state.inventaire);
   const shoppingSplice = shopping.slice(0, 4);
-
-  console.log(shopping);
-  
   
   return <>
   <section className="features-info">
@@ -38,7 +38,10 @@ export const Features = () => {
             <h3>{product.name}</h3>
             <p>{product.description.split('').splice(0, 60).join('')}</p>
             <span>€{product.price.toFixed(2)}</span>
-            <button><FaCartArrowDown className="add"/></button>
+            <button
+            { ...inventaire.find((item) => item.id === product.id) ? {disabled: true} : {} }
+            onClick={() => addToInventaire(product.id, product.image, product.name, product.price)}
+            ><FaCartArrowDown className="add"/></button>
           </div>
         </div>
       })}

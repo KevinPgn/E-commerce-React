@@ -98,6 +98,7 @@ main{
   margin-bottom: 20px;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .list-container .card img{

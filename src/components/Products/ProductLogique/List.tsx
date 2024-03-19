@@ -4,6 +4,7 @@ import { useShop } from '../../../store/Shop'
 import '../Products.css'
 import { FaHeart } from 'react-icons/fa'
 import { FaHeartBroken } from 'react-icons/fa'
+import { FaCartArrowDown } from "react-icons/fa";
 
 //image, name, overview, price, category
 
@@ -18,6 +19,7 @@ export const List = () => {
   const favoriRemove = useFavories(state => state.favoryRemove)
   const favories = useFavories(state => state.favories)
   const addToInventaire = useInventaire(state => state.addToInventaire)
+  const inventaire = useInventaire(state => state.inventaire)
   
   
   const filtered = () => {
@@ -61,7 +63,9 @@ export const List = () => {
               <p className='price'>${product.price}</p>
               <button 
               onClick={() => handleClicked(product.id, product.image, product.name, product.price)}
-              className='btn'>Add To Cart</button>
+              className='btn'
+              { ...inventaire.find((item) => item.id === product.id) ? {disabled: true} : {} }
+              ><FaCartArrowDown /></button>
             </div>
           </article>
         })
