@@ -8,6 +8,7 @@ import { FaCartArrowDown } from "react-icons/fa";
 export const Favories = () => {
   const favories = useFavories(state => state.favories)
   const favoriRemove = useFavories(state => state.favoryRemove)
+  const inventaire = useInventaire(state => state.inventaire)
 
   const addToInventaire = useInventaire(state => state.addToInventaire)
 
@@ -29,6 +30,7 @@ export const Favories = () => {
               <p>{product.description.slice(0, 70)}</p>
               <p className='price'>${product.price}</p>
               <button 
+              { ...inventaire.find((item) => item.id === product.id) ? {disabled: true} : {} }
               onClick={() => handleClicked(product.id, product.image, product.name, product.price)}
               className='btn'><FaCartArrowDown /></button>
             </div>

@@ -55,9 +55,10 @@ export const List = () => {
     <div className="list-container">
       {
         filtered().map((product, index) => {
-          return <Link to={`/products/${productID}`}><article key={index} className='card' onClick={() => setProductID(product.id)}>
+          return <article key={index} className='card' onClick={() => setProductID(product.id)}>
+            <Link to={`/products/${productID}`}>
             <div className="category">{product.category}</div>
-            <img src={product.image} alt={product.name} />
+            <img src={product.image} alt={product.name} /></Link>
             <FaHeart className='heart' onClick={() => favoriAdd(product)}/>
             {favories.find(fav => fav.id === product.id) ? <FaHeartBroken className='heart' onClick={() => favoriRemove(product)}/> : null }
             <div className="content">
@@ -71,7 +72,7 @@ export const List = () => {
               ><FaCartArrowDown /></button>
             </div>
           </article>
-          </Link>
+          
         })
       }
     </div>
