@@ -7,6 +7,7 @@ import { Footer } from './components/Home/Footer/Footer'
 import { ProductsPage } from './pages/ProductsPage'
 import { CartContainer } from './components/CartContainer/CartContainer'
 import { Favories } from './components/Favories/Favories'
+import { ProductInfo } from './components/ProductInfos/ProductInfo'
 
 function App() {  
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="*" element={<h1>Not Found</h1>} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/favories" element={<Favories />} />
+        <Route path="/products/:id" element={<ProductInfo />} />
       </Routes>
       <CartContainer />
       <Footer />

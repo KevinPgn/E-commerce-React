@@ -1,10 +1,12 @@
 import { useFavories } from '../../../store/Favories'
 import { useInventaire } from '../../../store/Inventaire'
+import { useProduct } from '../../../store/Product'
 import { useShop } from '../../../store/Shop'
 import '../Products.css'
 import { FaHeart } from 'react-icons/fa'
 import { FaHeartBroken } from 'react-icons/fa'
 import { FaCartArrowDown } from "react-icons/fa";
+import { Link } from 'react-router-dom'
 
 //image, name, overview, price, category
 
@@ -20,7 +22,8 @@ export const List = () => {
   const favories = useFavories(state => state.favories)
   const addToInventaire = useInventaire(state => state.addToInventaire)
   const inventaire = useInventaire(state => state.inventaire)
-  
+  const productID = useProduct(state => state.ProductID)
+  const setProductID = useProduct(state => state.setProductID)
   
   const filtered = () => {
     let filteredShopping = shopping
@@ -52,7 +55,7 @@ export const List = () => {
     <div className="list-container">
       {
         filtered().map((product, index) => {
-          return <article key={index} className='card'>
+          return <Link to={`/products/${productID}`}><article key={index} className='card' onClick={() => setProductID(product.id)}>
             <div className="category">{product.category}</div>
             <img src={product.image} alt={product.name} />
             <FaHeart className='heart' onClick={() => favoriAdd(product)}/>
@@ -68,6 +71,7 @@ export const List = () => {
               ><FaCartArrowDown /></button>
             </div>
           </article>
+          </Link>
         })
       }
     </div>
