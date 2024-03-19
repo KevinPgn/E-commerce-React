@@ -2,7 +2,7 @@ import {create} from 'zustand';
 
 type Inventaire = {
   inventaire: any[];
-  addToInventaire: (id:number, image: string, name: string, price: number) => void;
+  addToInventaire: (id:string, image: string, name: string, price: number) => void;
   addMoreQuantity: (id: number) => void;
   removeQuantity: (id: number) => void;
 };
@@ -10,7 +10,7 @@ type Inventaire = {
 export const useInventaire = create<Inventaire>((set) => ({
   inventaire: [],
 
-  addToInventaire: (id: number, image: string, name: string, price: number) => 
+  addToInventaire: (id: string, image: string, name: string, price: number) => 
     set((state) => {
       const find = state.inventaire.find((product) => product.id === id);
 

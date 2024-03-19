@@ -23,9 +23,9 @@ export const Navbar = () => {
           <Link to="/about">About</Link>
         </div>
         <div className="right">
-          <div className="heart">
+          <Link to='/favories' className="heart">
             <CiHeart className="icon"/>
-          </div>
+          </Link>
           <div className="cart">
             <span>{inventaire.length}</span>
             <CiShoppingCart className="icon" onClick={() => toggleCart()}/>

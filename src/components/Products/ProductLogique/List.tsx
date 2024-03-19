@@ -1,7 +1,9 @@
+import { useFavories } from '../../../store/Favories'
 import { useInventaire } from '../../../store/Inventaire'
 import { useShop } from '../../../store/Shop'
 import '../Products.css'
 import { FaHeart } from 'react-icons/fa'
+import { FaHeartBroken } from 'react-icons/fa'
 
 //image, name, overview, price, category
 
@@ -12,6 +14,9 @@ export const List = () => {
   const setShopLength = useShop(state => state.setShopLength)
   const searchValue = useShop(state => state.searchValue)
 
+  const favoriAdd = useFavories(state => state.favoryAdd)
+  const favoriRemove = useFavories(state => state.favoryRemove)
+  const favories = useFavories(state => state.favories)
   const addToInventaire = useInventaire(state => state.addToInventaire)
   
   
@@ -37,7 +42,7 @@ export const List = () => {
     return filteredShopping
   }
 
-  const handleClicked = (id: number, image: string, name: string, price: number) => {
+  const handleClicked = (id: string, image: string, name: string, price: number) => {
     addToInventaire(id, image, name, price)
   }
 
@@ -48,7 +53,8 @@ export const List = () => {
           return <article key={index} className='card'>
             <div className="category">{product.category}</div>
             <img src={product.image} alt={product.name} />
-            <FaHeart className='heart' />
+            <FaHeart className='heart' onClick={() => favoriAdd(product)}/>
+            {favories.find(fav => fav.id === product.id) ? <FaHeartBroken className='heart' onClick={() => favoriRemove(product)}/> : null }
             <div className="content">
               <h3>{product.name}</h3>
               <p>{product.description.slice(0, 70)}</p>

@@ -1,0 +1,102 @@
+.list-favory{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem 0;
+}
+
+.empty{
+  margin-bottom: 14.67rem;
+}
+
+.list-favory .card{
+  width: 400px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.list-favory .card img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.list-favory .card:hover img{
+  transform: scale(1.1);
+}
+
+.list-favory .card .content{
+  padding: 20px;
+  text-align: center;
+}
+
+.list-favory .card .content h3{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.list-favory .card .content p{
+  font-size: 18px;
+  color: #000000;
+}
+
+.list-favory .card .content .price{
+  color: rgb(255, 41, 41);
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+.list-favory .card .content .btn{
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 20px;
+  background: #060d2c;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.list-favory .card .content .btn:hover{
+  background: #ca063a;
+}
+
+.list-favory .card .category{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #1303a8;
+  font-size: 18px;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 11;
+}
+
+.list-favory .card .heart{
+  color: white;
+  background: red;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 11;
+  font-size: 30px;
+}
