@@ -54,7 +54,7 @@ export const List = () => {
   return <>
     <div className="list-container">
       {
-        filtered().map((product, index) => {
+        filtered()?.map((product, index) => {
           return <article key={index} className='card' onClick={() => setProductID(product.id)}>
             <Link to={`/products/${productID}`}>
             <div className="category">{product.category}</div>

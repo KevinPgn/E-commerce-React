@@ -31,4 +31,5 @@ export const useFavories = create<FavoriesState>((set) => ({
     set((state) => ({
       favories: state.favories.filter((fav) => fav.id !== item.id),
     })),
+
 }));

@@ -5,14 +5,19 @@ import { useState } from 'react'
 import { FaCartShopping } from 'react-icons/fa6'
 import { FaHeart } from 'react-icons/fa6'
 import { FaStar } from 'react-icons/fa6'
+import { useInventaire } from '../../store/Inventaire'
+import { useFavories } from '../../store/Favories'
 
 export const ProductInfo = () => {
   const productID = useProduct(state => state.ProductID)
   const shopping = useShop(state => state.shopping)
-  const [slider, setSlider] = useState(0)
+  const [slider, setSlider] = useState<number>()
+  const inventaire = useInventaire(state => state.inventaire)
   const imgs = ["https://www.course-api.com/images/store/extra-product-1.jpeg", "https://www.course-api.com/images/store/extra-product-2.jpeg", "https://www.course-api.com/images/store/extra-product-3.jpeg", "https://www.course-api.com/images/store/extra-product-4.jpeg"]  
 
-  console.log(shopping)
+  const addToInventaire = useInventaire(state => state.addToInventaire)
+  const favoryAdd = useFavories(state => state.favoryAdd)
+
 
   return <>
     <div className="product-info-container">
@@ -22,8 +27,8 @@ export const ProductInfo = () => {
             return (
               <div key={index} className="product-info">
                 <div className="left">
-                  <img src={typeof slider === "number" ? imgs[slider] : slider} alt={product.name} />
-
+                  <img className='img-principal' src={typeof slider !== "number" ? product.image : imgs[slider]} alt={product.name} />
+                  
                   <div className="other-images">
                   <img src={product.image} alt={product.name} onClick={() => setSlider(product.image)}/>
                    {
@@ -57,8 +62,10 @@ export const ProductInfo = () => {
                   <div className="line"></div>
 
                   <div className="content-btn">
-                    <button className='add-to-cart'><FaCartShopping /> Add to cart</button>
-                    <button className='add-to-wishlist'><FaHeart /> Add to wishlist</button>
+                    <button className='add-to-cart'
+                    { ...inventaire.find((item) => item.id === product.id) ? {disabled: true} : {} }
+                    onClick={() => addToInventaire(product.id, product.image, product.name, product.price)}><FaCartShopping /> Add to cart</button>
+                    <button className='add-to-wishlist' onClick={() => favoryAdd(product)}><FaHeart /> Add to wishlist</button>
                   </div>
                 </div>
               </div>
