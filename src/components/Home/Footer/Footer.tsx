@@ -50,7 +50,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className="line"></div>
-      <p className="madeby">© 2024 Made By TeruBW for Front-end Project Development</p>
+      <p className="madeby">© 2024 Made By KevinPgn for Front-end Project Development</p>
     </footer>
   </>
 }
